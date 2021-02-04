@@ -4,6 +4,10 @@
 
 This  application  can be used to write, save, and delete notes. This application  uses an express backend and save and retrieve note data from a JSON file. Github repo that makes  the use of heroku to deploy the app into the web.
 
+Github: https://github.com/Mf948/note-taker-app
+
+app: https://note-taker-express-node.herokuapp.com/
+
 ## Table of contents
 
 [User Story ](#user)  

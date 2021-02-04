@@ -31,11 +31,15 @@ module.exports = function(app) {
         
         })
 
+    });
 
-      
-        
-    
+ app.delete("api/notes", function(req,res){
+
+    fs.readFile("db/db.json",function(err,data){
+        if (err) throw err;
+        console.log('data', JSON.parse(data))
     })
+    
+ });
 
- 
-}
+};
