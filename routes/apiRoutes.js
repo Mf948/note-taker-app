@@ -1,6 +1,9 @@
 
-const e = require("express");
+const { text } = require("express");
+const express = require("express");
 var fs = require("fs");
+//var data =require("./db/db.json")
+
 
 module.exports = function(app) {
 
@@ -13,21 +16,26 @@ module.exports = function(app) {
             res.json(JSON.parse(data))
         })
   
+    });
+    app.post("api/notes", function(req,res){
+        fs.readFile("db/db.json", function(err, data) {
+            if (err) throw err;
+            console.log('data', JSON.parse(data))
+
+            res.json(JSON.parse(data))
+            var text = req.body;
+            fs.writeFileSync("db/db.json",JSON.parse(text)) 
+           
+            console.log(data)
+            res.json(data)
+        
+        })
 
 
-app.post("/api/notes", function(req, res) {
-
-    fs.readFile("db/db.json", function(err, data) {
-        if (err) throw err;
-        console.log('data', JSON.parse(data))
-        console.log(request.body);      // your JSON
-       response.send(request.body);   
-
-        res.json(JSON.parse(data))
-
+      
+        
+    
     })
- 
-})
 
-})
+ 
 }
