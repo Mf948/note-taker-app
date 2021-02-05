@@ -1,8 +1,8 @@
 
-const { text } = require("express");
+//const { text } = require("express");
 const express = require("express");
 var fs = require("fs");
-//var data =require("./db/db.json")
+
 
 
 module.exports = function(app) {
@@ -17,29 +17,37 @@ module.exports = function(app) {
         })
   
     });
-    app.post("api/notes", function(req,res){
-        fs.readFile("db/db.json", function(err, data) {
-            if (err) throw err;
-            console.log('data', JSON.parse(data))
+    // app.post("api/notes", function(req,res){
+    //     fs.readFile("db/db.json", function(err, data) {
+    //         if (err) throw err;
+    //         console.log('data', JSON.parse(data))
 
-            res.json(JSON.parse(data))
-            var text = req.body;
-            fs.writeFileSync("db/db.json",JSON.parse(text)) 
+    //         let snotes = JSON.parse(data)
+    //         var text = req.body;
+    //        note.push(text)
+
+    //         fs.writeFileSync("db/db.json", JSON.stringify(snotes)) 
            
-            console.log(data)
-            res.json(data)
+    //         res.json(text)
         
-        })
+    //     })
 
-    });
+    // });
 
- app.delete("api/notes", function(req,res){
+ //app.delete("api/notes/id", function(req,res){
 
-    fs.readFile("db/db.json",function(err,data){
-        if (err) throw err;
-        console.log('data', JSON.parse(data))
-    })
+    //fs.readFile("db/db.json",function(err,data){
+    //    if (err) throw err;
+    //    console.log('data', JSON.parse(data))
+//data.forEachforEach(function( id ) {
+   // if (item === '1') {
+    //  object.splice(index, 1)
+   // }
+
+   // })
     
- });
+ //})
 
-};
+//})
+
+}
