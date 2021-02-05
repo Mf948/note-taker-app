@@ -17,22 +17,22 @@ module.exports = function(app) {
         })
   
     });
-    // app.post("api/notes", function(req,res){
-    //     fs.readFile("db/db.json", function(err, data) {
-    //         if (err) throw err;
-    //         console.log('data', JSON.parse(data))
+     app.post("/api/notes", function(req,res){
+        fs.readFile("db/db.json", function(err, data) {
+            if (err) throw err;
+           console.log('data', JSON.parse(data))
 
-    //         let snotes = JSON.parse(data)
-    //         var text = req.body;
-    //        note.push(text)
+          let snotes = JSON.parse(data)
+           var text = req.body;
+          snotes.push(text)
 
-    //         fs.writeFileSync("db/db.json", JSON.stringify(snotes)) 
+         fs.writeFileSync("db/db.json", JSON.stringify(snotes)) 
            
-    //         res.json(text)
+         res.json(text)
         
-    //     })
+      })
 
-    // });
+     });
 
  //app.delete("api/notes/id", function(req,res){
 
