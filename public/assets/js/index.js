@@ -25,9 +25,9 @@ const saveNote = (note) => {
 };
 
 // A function for deleting a note from the db
-const deleteNote = (id) => {
+const deleteNote = (title) => {
   return $.ajax({
-    url: "api/notes/" + id,
+    url: "api/notes/" + title,
     method: "DELETE",
   });
 };
@@ -73,7 +73,7 @@ const handleNoteDelete = function (event) {
     activeNote = {};
   }
 
-  deleteNote(note.id).then(() => {
+  deleteNote(note.title).then(() => {
     getAndRenderNotes();
     renderActiveNote();
   });
